@@ -1,6 +1,6 @@
 Chismeando
 
-This project is a simple application that will record a 10-second audio clip at a sampling rate of 44.1 kHz, amplify the audio by a factor of 3.0, and save it as a WAV file with the current date and time in its name.
+This project is a simple application that will record a 10-second (You can edit the time of record) audio clip at a sampling rate of 44.1 kHz, amplify the audio by a factor of 3.0, and save it as a WAV file with the current date and time in its name.
 
 Objective
 
