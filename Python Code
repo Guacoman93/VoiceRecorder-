@@ -1,0 +1,27 @@
+VOICE RECORDER
+
+import sounddevice
+from scipy.io.wavfile import write
+import numpy as np 
+from datetime import datetime
+
+fs=44100 #sample_rate
+seconds=10
+amplificacion = 3.0
+
+tiempo_actual = datetime.now() .strftime("%Y%m%d_%H%M%S")
+nombre_archivo = f"Chismesito_del_{tiempo_actual}.wav"
+
+
+print("Chismeando...")
+record_voice = sounddevice.rec(int(seconds*fs), samplerate=fs, channels=2)
+sounddevice.wait()
+print("Tamos listos por aquí")
+
+audio_amplificado = record_voice * amplificacion
+audio_final = np.clip(audio_amplificado, -1, 1)
+
+
+sounddevice.wait()
+write(nombre_archivo,fs,audio_final)
+print(f"Esto esta es grabado como '{nombre_archivo}'")
